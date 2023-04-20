@@ -1,0 +1,27 @@
+<meta charset="UTF-8">
+
+<textarea id="mensaje" cols="60" rows="25"></textarea>
+<button>Verificar si acertó con el secreto</button>
+
+<script>
+    var secreto = 5;
+    var input = document.querySelector("textarea");
+
+    function codificar(){
+        var decod = input.value.replace(/o/g, "opopo");
+        alert(decod);
+    }
+
+    //function verificar(){
+    //    if (parseInt(input.value) == secreto){
+    //        alert ("Usted acertó");
+    //    }
+    //    else {
+    //        alert("Usted erró");
+    //    }
+    //}
+
+    var button = document.querySelector("button");
+    button.onclick = codificar;
+
+</script>
