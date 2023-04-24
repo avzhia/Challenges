@@ -1,0 +1,17 @@
+<meta charset="UTF-8">
+
+<textarea cols="60" rows="25"></textarea>
+<button>CODIFICAR</button>
+
+<script>
+    var input = document.querySelector("textarea");
+
+    function codificar(){
+        var cod = input.value.replace(/e/g, "enter").replace(/i/g, "imes").replace(/a/g, "ai").replace(/o/g, "ober").replace(/u/g, "ufat");
+        alert(cod);
+    }
+
+    var button = document.querySelector("button");
+    button.onclick = codificar;
+
+</script>

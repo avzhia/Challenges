@@ -1,0 +1,54 @@
+<meta charset="UTF-8">
+
+<style>
+.button {
+  border: none;
+  color: white;
+  padding: 6px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button1 {background-color: #4CAF50;} /* Verde */
+.button2 {background-color: #008CBA;} /* Azul */
+.button3 {background-color: #008CBA;}
+
+</style>
+
+<textarea id="textoOriginal" cols="60" rows="25" placeholder="Introduce el texto aquí"></textarea>
+<textarea id="textoCodificado" cols="60" rows="25" placeholder="Texto encriptado"></textarea>
+<button onclick="encriptar()" class="button button1">ENCRIPTAR</button>
+<button onclick="desencriptar()" class="button button2">DESENCRIPTAR</button>
+<button onclick="copiar()" class="button button3">COPIAR</button>
+
+<script>
+    var input = document.getElementById("textoOriginal");
+    var output = document.getElementById("textoCodificado");
+    //var button = document.querySelector("button");
+    //button.onclick = encriptar;
+
+    function desencriptar(){
+        var cod = input.value.replace(/enter/g, "e").replace(/imes/g, "i").replace(/ai/g, "a").replace(/ober/g, "o").replace(/ufat/g, "u");
+        document.getElementById("textoCodificado").value = cod;
+        document.getElementById("textoOriginal").value = "";
+    }
+
+    function encriptar(){
+        var cod = input.value.replace(/e/g, "enter").replace(/i/g, "imes").replace(/a/g, "ai").replace(/o/g, "ober").replace(/u/g, "ufat");
+        document.getElementById("textoCodificado").value = cod;
+        document.getElementById("textoOriginal").value = "";
+        //alert(cod);
+    }
+
+    function copiar(){
+        var contenido = document.getElementById("textoCodificado");
+        contenido.select();
+        document.execCommand("copy");
+        alert("Copiado");
+    }
+
+
+</script>
